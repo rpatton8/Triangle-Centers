@@ -10,7 +10,7 @@ public class Triangle {
     private boolean initialized;  //  by default set to false
     private int dragX, dragY;  //  by default set to 0
     private Point incenter, centroid, circumcenter, orthocenter, ninePointCenter;   //  by default set to null
-    private double inscribedRadius, circumscribedRadius, ninePointRadius;  // by default set to 0..0
+    private double inscribedRadius, circumscribedRadius, ninePointRadius;  // by default set to 0.0
     public static int CANVAS_WIDTH = 654;
     public static int CANVAS_HEIGHT = 678;
     public static int CONTROL_WIDTH = 250;
@@ -22,11 +22,9 @@ public class Triangle {
             modifyExistingPoint(x, y, null);
             return;
         } else if (initialized && point.equals("A")) {
-            System.out.println("HereA1");
             modifyExistingPoint(x, y, "A");
             return;
         } else if (initialized && point.equals("B")) {
-            System.out.println("HereB");
             modifyExistingPoint(x, y, "B");
             return;
         } else if (initialized && point.equals("C")) {
@@ -35,7 +33,6 @@ public class Triangle {
         }
         if (!initialized) {
             if((A==null && point==null) || (point != null && point.equals("A"))) {
-                System.out.println("HereA2");
                 x1 = x;
                 TriangleCenters.x1.setText(Double.toString(((double)x-CANVAS_WIDTH/2)/PIXELS_PER_UNIT));
                 TriangleCenters.x1Val = ((double)x-CANVAS_WIDTH/2)/PIXELS_PER_UNIT;
